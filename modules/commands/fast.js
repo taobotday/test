@@ -1,8 +1,8 @@
 module.exports.config = {
     name: "fast",
     version: "1.0.0",
-    hasPermssion: 2,
-    credits: "Mirai Team",
+    hasPermssion: 0,
+    credits: "Raiden",
     description: "Kiểm tra tốc độ mạng",
     commandCategory: "system",
     cooldowns: 15,
