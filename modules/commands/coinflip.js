@@ -1,11 +1,11 @@
 module.exports.config = {
-	name: "coinflip", // Tên lệnh, được sử dụng trong việc gọi lệnh
+	name: "latdongxu", // Tên lệnh, được sử dụng trong việc gọi lệnh
 	version: "1.0.0", // phiên bản của module này
 	hasPermssion: 0, // Quyền hạn sử dụng, với 0 là toàn bộ thành viên, 1 là quản trị viên trở lên, 2 là admin/owner
 	credits: "BerVer", // Công nhận module sở hữu là ai
 	description: "Lật đồng xu", // Thông tin chi tiết về lệnh
 	commandCategory: "General", // Thuộc vào nhóm nào
-	usages: "coinflip", // Cách sử dụng lệnh
+	usages: "", // Cách sử dụng lệnh
 	cooldowns: 5, // Thời gian một người có thể lặp lại lệnh
 	//Liệt kê các package module ở ngoài tại đây để khi load lệnh nó sẽ tự động cài!
 	// Info là phần chi tiết thêm của cách sử dụng lệnh
