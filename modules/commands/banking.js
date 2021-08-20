@@ -1,11 +1,11 @@
 module.exports.config = {
 	name: "banking",
 	version: "1.0.0",
-	credits: "HungCho & Khánh Milo",
+	credits: "Raiden",
 	description: "",
 	usages: "",
     commandCategory: "game-sp",
-	cooldowns: 0,
+	cooldowns: 1,
 	dependencies: {
         "fs-extra" : ""
     }
@@ -37,7 +37,7 @@ module.exports.handleReply = async function({ api, event, handleReply, Currencie
             switch (event.body) {
                 case "1": {
                     return api.sendMessage(
-                        "Bạn có thể reply số tiền cần đổi sang exp ! 10 đô = 1 exp."
+                        "Bạn có thể reply số VNĐ cần đổi sang EXP ! 10 VNĐ = 1 EXP."
                   , event.threadID, (error, info) => {
                       global.client.handleReply.push({
                           name: this.config.name,
@@ -49,7 +49,7 @@ module.exports.handleReply = async function({ api, event, handleReply, Currencie
                 } 
                 case "2": {
                     return api.sendMessage(
-                        "Bạn có thể reply số exp cần đổi sang tiền ! 5 exp = 1 đô."
+                        "Bạn có thể reply số EXP cần đổi sang VNĐ ! 1 EXP = 10 VNĐ."
                   , event.threadID, (error, info) => {
                       global.client.handleReply.push({
                           name: this.config.name,
@@ -66,34 +66,34 @@ module.exports.handleReply = async function({ api, event, handleReply, Currencie
           }
           case "exp": {
             var content = event.body;
-            if(content > exp) api.sendMessage("Exp của bạn không đủ ? vui lòng cào phím nhiều hơn",event.threadID,event.messageID)
+            if(content > exp) api.sendMessage("EXP của bạn không đủ? Vui lòng cào phím nhiều hơn.",event.threadID,event.messageID)
             else 
             {
-            await Currencies.increaseMoney(handleReply.author, parseInt(content / 5));
+            await Currencies.increaseMoney(handleReply.author, parseInt(content / 1));
             var exp = ((await Currencies.getData(handleReply.author)).exp) - parseInt(content);
             await Currencies.setData(handleReply.author, { exp })
-            var msg = `💸Giao dịch thành công !\nThời gian: ${time} - ${date}\nChi tiết: đổi ${content} exp để lấy ${content / 5} đô.`
+            var msg = `Giao dịch thành công!\nThời gian: ${time} - ${date}\nChi tiết: đổi ${content} EXP để lấy ${content / 5} VNĐ.`
             api.sendMessage(msg,handleReply.author);
             const suggest = msg;
             getData.push(suggest);
-            api.sendMessage("Giao dịch của bạn đã được lưu trên hệ thống !",event.threadID, () => fs.writeFileSync(dirFile, JSON.stringify(getData)),event.messageID);
+            api.sendMessage("Giao dịch của bạn đã được lưu trên hệ thống!",event.threadID, () => fs.writeFileSync(dirFile, JSON.stringify(getData)),event.messageID);
           
             }
           break;
        }
        case "money": {
         var content = event.body;
-        if(content > money) api.sendMessage("Tiền của bạn không đủ ? vui lòng theo thầy Huấn bươm trải !",event.threadID,event.messageID)
+        if(content > money) api.sendMessage("Tiền của bạn không đủ? Vui lòng theo thầy Huấn bươm trải!",event.threadID,event.messageID)
         else 
         {
             await Currencies.increaseMoney(event.senderID, parseInt("-"+content))
         var exp = ((await Currencies.getData(handleReply.author)).exp) + parseInt(content / 10);
         await Currencies.setData(handleReply.author, { exp })
-        var msg = `💸Giao dịch thành công !\nThời gian: ${time} - ${date}\nChi tiết: đổi ${content} đô để lấy ${content / 10} exp.`
+        var msg = `Giao dịch thành công!\nThời gian: ${time} - ${date}\nChi tiết: đổi ${content} VNĐ để lấy ${content / 10} EXP.`
         api.sendMessage(msg,handleReply.author);
         const suggest = msg;
         getData.push(suggest);
-        api.sendMessage("Giao dịch của bạn đã được lưu trên hệ thống !",event.threadID, () => fs.writeFileSync(dirFile, JSON.stringify(getData)),event.messageID);
+        api.sendMessage("Giao dịch của bạn đã được lưu trên hệ thống!",event.threadID, () => fs.writeFileSync(dirFile, JSON.stringify(getData)),event.messageID);
       
         }
       break;
@@ -108,10 +108,10 @@ module.exports.run = async function({ api, event, args }) {
 	var getData = JSON.parse(getList);
 
     if(!args[0])return api.sendMessage(
-                "◆━━◆ 🏛 BANKING ◆━━◆" +
+                "◆━━◆ BANKING ◆━━◆" +
                 "\n» Mời bạn nhập lựa chọn «" +
-                "\n\n1. Đổi tiền sang exp ❄️." +
-                "\n2. Đổi exp sang tiền 💦." +
+                "\n\n1. Đổi VNĐ sang EXP." +
+                "\n2. Đổi EXP sang VNĐ." +
                 "\n3. Update sau ⚒." +
                 "\n\n» Hãy reply tin nhắn và chọn theo số «"
             , event.threadID, (error, info) => {
