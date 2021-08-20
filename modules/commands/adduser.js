@@ -7,8 +7,8 @@ module.exports.config = {
     name: "adduser",
     version: "2.3.2",
     hasPermssion: 0,
-    credits: "ProCoderMew",
-    description: "Thêm người dùng vào nhóm bằng link hoặc id",
+    credits: "RAIDEN",
+    description: "Thêm người dùng vào nhóm bằng link/id.",
     commandCategory: "group",
     usages: "[args]",
     cooldowns: 5
@@ -54,7 +54,7 @@ module.exports.run = async function ({ api, event, args, Threads, Users }) {
             catch {         
                 return out(`Không thể thêm ${name ? name : "người dùng"} vào nhóm.`);
             }
-            if (approvalMode === true && !admins.includes(botID))  return out(`Đã thêm ${name ? name : "thành viên"} vào danh sách phê duyệt !`);
+            if (approvalMode === true && !admins.includes(botID))  return out(`Đã thêm ${name ? name : "thành viên"} vào danh sách phê duyệt!`);
             else return join({ api, event: form, Threads, Users });
         }
     }
