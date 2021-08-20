@@ -1,11 +1,11 @@
 module.exports.config = {
-    name: "chuilientuc",
+    name: "chửi",
     version: "1.0.0",
     hasPermssion: 1,
     credits: "HelyT",
     description: "Tag liên tục người bạn tag trong 5 lần\nCó thể gọi là gọi hồn người đó",
     commandCategory: "group",
-    usages: "chuilientuc @mention",
+    usages: "[tag]",
     cooldowns: 10,
     dependencies: {
         "fs-extra": "",
