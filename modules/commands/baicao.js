@@ -2,8 +2,8 @@ module.exports.config = {
 	name: "baicao",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "CatalizCS",
-	description: "Game bài cào dành cho nhóm có đặt cược",
+	credits: "Raiden",
+	description: "Game bài cào dành cho nhóm có đặt cược.",
 	commandCategory: "game",
 	usages: "[create/start/join/info/leave]",
 	cooldowns: 1
