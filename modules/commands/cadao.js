@@ -2,8 +2,8 @@
 	name: "cadao",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "VanHung",
-	description: "Ca Dao Việt Nam",
+	credits: "Raiden",
+	description: "Ca Dao Việt Nam.",
 	commandCategory: "News",
 	usages: "cadao",
 	cooldowns: 5
@@ -19,7 +19,7 @@ var gai = anh.data.data.substring(anh.data.data.lastIndexOf(".") + 1);
 var cadao = res.data.data
 let callback = function () {
 			 api.sendMessage({
-				body: `★ℭɑ ɗɑ❍ ҩ¡ệζ ղɑლ★:\n﹤ ${cadao} ﹥`,
+				body: `Ca dao Việt Nam:\n﹤ ${cadao} ﹥`,
 				attachment: fs.createReadStream(__dirname + `/cache/gaicadao.${gai}`)
 			}, event.threadID, () => fs.unlinkSync(__dirname + `/cache/gaicadao.${gai}`), event.messageID);
 			};
