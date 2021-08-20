@@ -5,7 +5,7 @@ module.exports.config = {
 	credits: 'Raiden',
 	description: 'Tăng giảm VNĐ.',
 	commandCategory: 'Economy',
-	usages: '[inc/dec/me/all] [tag]',
+	usages: '[inc/dec] [me/tag]',
 	cooldowns: 5,
 	info: [
 		{
