@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "banking",
 	version: "1.0.0",
 	credits: "Raiden",
-	description: "",
+	description: "Ngân hàng chuyển đổi.",
 	usages: "",
     commandCategory: "game-sp",
 	cooldowns: 1,
