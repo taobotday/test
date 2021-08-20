@@ -2,10 +2,10 @@ module.exports.config = {
     name: "fishing",
     version: "1.0.1",
     hasPermssion: 0,
-    credits: "HelyT",
+    credits: "Raiden",
     description: "Tham gia câu cá ngay trên chính nhóm của bạn",
     commandCategory: "game-sp",
-    usages: "fishing [sell/shop/upgrade/info/inventory/status/register/enchant]",
+    usages: "[sell/shop/upgrade/info/inventory/status/register/enchant]",
     cooldowns: 0,
     dependencies: {
         "fs-extra": "",
