@@ -7,7 +7,7 @@ module.exports.config = {
     name: "adduser",
     version: "2.3.2",
     hasPermssion: 0,
-    credits: "RAIDEN",
+    credits: "Raiden",
     description: "Thêm người dùng vào nhóm bằng link/id.",
     commandCategory: "group",
     usages: "[args]",
