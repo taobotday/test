@@ -2,8 +2,8 @@
 	name: "anhnen",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "VanHung",
-	description: "Gợi ý cho bạn ảnh nền",
+	credits: "Raiden",
+	description: "Gợi ý cho bạn ảnh nền.",
 	commandCategory: "Hình Ảnh",
 	usages: "anhnen",
 	cooldowns: 5
