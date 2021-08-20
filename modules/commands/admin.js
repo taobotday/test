@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "admin",
 	version: "1.0.5",
 	hasPermssion: 0,
-	credits: "RAIDEN",
+	credits: "Raiden",
 	description: "Quản lý admin bot.",
 	commandCategory: "config",
 	usages: "[list/add/remove] [userID]",
