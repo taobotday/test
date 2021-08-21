@@ -17,7 +17,7 @@ module.exports.handleEvent = async ({ event, api, Users, Currencies }) => {
 	var values = global.moduleData.baicao.get(threadID);
 	if (values.start != 1) return;
 
-	if (body.indexOf("Chia bài") == 0) {
+	if (body.indexOf("chia bài") == 0) {
 		if (values.chiabai == 1) return;
 		for(var i = 0; i < values.player.length; i++) {
 			const card1 = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
@@ -34,10 +34,10 @@ module.exports.handleEvent = async ({ event, api, Users, Currencies }) => {
 		}
 		values.chiabai = 1;
 		global.moduleData.baicao.set(threadID, values);
-		return api.sendMessage("Bài đã được chia thành công! tất cả mọi người đều có 2 lượt đổi bài nêú không thâý bài hãy kiểm tra lại tin nhắn chờ", threadID);
+		return api.sendMessage("Bài đã được chia thành công! tất cả mọi người đều có 2 lượt đổi bài nêú không thâý bài hãy kiểm tra lại tin nhắn chờ.", threadID);
 	}
 
-	if (body.indexOf("Đổi bài") == 0) {
+	if (body.indexOf("đổi bài") == 0) {
 		if (values.chiabai != 1) return;
 		var player = values.player.find(item => item.id == senderID);
 		if (player.doibai == 0) return api.sendMessage("Bạn đã sử dụng toàn bộ lượt đổi bài", threadID, messageID);
@@ -52,7 +52,7 @@ module.exports.handleEvent = async ({ event, api, Users, Currencies }) => {
 		return api.sendMessage(`Bài của bạn sau khi được đổi: ${player.card1} | ${player.card2} | ${player.card3} \n\nTổng bài của bạn: ${player.tong}`, player.id);
 	}
 
-	if (body.indexOf("Ready") == 0) {
+	if (body.indexOf("ready") == 0) {
 		if (values.chiabai != 1) return;
 		const player = values.player.find(item => item.id == senderID);
 		if (player.ready == true) return;
@@ -104,7 +104,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 
 	if (args[0] == "create") {
 		if (global.moduleData.baicao.has(threadID)) return api.sendMessage("Hiện tại nhóm này đang có bàn bài cào đang được mở", threadID, messageID);
-		if (!args[1] || isNaN(args[1]) || parseInt(args[1]) <= 1) return api.sendMessage("Mức đặt cược của bạn không phải là một con số hoặc mức đặt cược của bạn bé hơn 1$", threadID, messageID);
+		if (!args[1] || isNaN(args[1]) || parseInt(args[1]) <= 1) return api.sendMessage("Mức đặt cược của bạn không phải là một con số hoặc mức đặt cược của bạn bé hơn 1 VNĐ", threadID, messageID);
 		
 		try {
 			await Currencies.decreaseMoney(senderID, parseInt(args[1]));
