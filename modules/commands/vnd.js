@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.2",
 	hasPermssion: 0,
 	credits: "Raiden",
-	description: "Kiểm tra số tiền của bạn hoặc người khác.",
+	description: "Kiểm tra số VNĐ.",
 	commandCategory: "economy",
 	usages: "[tag]",
 	cooldowns: 5
@@ -16,7 +16,7 @@ module.exports.languages = {
 	},
 	"en": {
 		"sotienbanthan": "Your current balance: %1 VNĐ",
-		"sotiennguoikhac": "%1's current balance: %2 VNĐ"
+		"sotiennguoikhac": "%1's current balance: %2$."
 	}
 }
 
