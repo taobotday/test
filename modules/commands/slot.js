@@ -11,9 +11,9 @@ module.exports.config = {
 
 module.exports.languages = {
     "vi": {
-        "missingInput": "[ SLOT ] Số VNĐ đặt cược không được để trống hoặc là số âm",
-        "moneyBetNotEnough": "[ SLOT ] Số VNĐ bạn đặt lớn hơn hoặc bằng số dư của bạn!",
-        "limitBet": "[ SLOT ] Số VNĐ đặt không được dưới 100 VNĐ!",
+        "missingInput": "[ SLOT ] Số tiền đặt cược không được để trống hoặc là số âm",
+        "moneyBetNotEnough": "[ SLOT ] Số tiền bạn đặt lớn hơn hoặc bằng số dư của bạn!",
+        "limitBet": "[ SLOT ] Số tiền đặt không được dưới 100 VNĐ!",
         "returnWin": "🎰 %1 | %2 | %3 🎰\nBạn đã THẮNG với %4 VNĐ",
         "returnLose": "🎰 %1 | %2 | %3 🎰\nBạn đã THUA và mất %4 VNĐ"
     },
