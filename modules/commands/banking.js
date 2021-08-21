@@ -37,7 +37,7 @@ module.exports.handleReply = async function({ api, event, handleReply, Currencie
             switch (event.body) {
                 case "1": {
                     return api.sendMessage(
-                        "Bạn có thể reply số VNĐ cần đổi sang EXP ! 100 VNĐ = 1 EXP."
+                        "Bạn có thể reply số VNĐ cần đổi sang EXP ! 1000 VNĐ = 1 EXP."
                   , event.threadID, (error, info) => {
                       global.client.handleReply.push({
                           name: this.config.name,
@@ -49,7 +49,7 @@ module.exports.handleReply = async function({ api, event, handleReply, Currencie
                 } 
                 case "2": {
                     return api.sendMessage(
-                        "Bạn có thể reply số EXP cần đổi sang VNĐ ! 1 EXP = 100 VNĐ."
+                        "Bạn có thể reply số EXP cần đổi sang VNĐ ! 1 EXP = 1000 VNĐ."
                   , event.threadID, (error, info) => {
                       global.client.handleReply.push({
                           name: this.config.name,
@@ -87,7 +87,7 @@ module.exports.handleReply = async function({ api, event, handleReply, Currencie
         else 
         {
             await Currencies.increaseMoney(event.senderID, parseInt("-"+content))
-        var exp = ((await Currencies.getData(handleReply.author)).exp) + parseInt(content / 100);
+        var exp = ((await Currencies.getData(handleReply.author)).exp) + parseInt(content / 1000);
         await Currencies.setData(handleReply.author, { exp })
         var msg = `Giao dịch thành công!\nThời gian: ${time} - ${date}\nChi tiết: đổi ${content} VNĐ để lấy ${content / 10} EXP.`
         api.sendMessage(msg,handleReply.author);
