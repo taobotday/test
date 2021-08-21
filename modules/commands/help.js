@@ -2,7 +2,7 @@ module.exports.config = {
 	name: 'help',
 	version: '1.0.1',
 	hasPermssion: 0,
-	credits: 'TBĐ',
+	credits: 'Raiden',
 	description: 'Hướng dẫn cho người mới',
 	commandCategory: 'system',
 	usages: '[tên module]',
