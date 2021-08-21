@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "balance",
+	name: "vnd",
 	version: "1.0.2",
 	hasPermssion: 0,
 	credits: "Raiden",
