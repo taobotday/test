@@ -2,8 +2,8 @@
 	name: "rankup",
 	version: "0.0.2",
 	hasPermssion: 1,
-	credits: "Mirai Team",
-	description: "Thông báo rankup cho từng nhóm, người dùng",
+	credits: "Raiden",
+	description: "Thông báo rankup cho từng nhóm, người dùng.",
 	commandCategory: "system",
 	dependencies: {
 		"fs-extra": ""
