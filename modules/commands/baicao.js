@@ -79,7 +79,7 @@ module.exports.handleEvent = async ({ event, api, Users, Currencies }) => {
 			} catch (e) {};
 
 			global.moduleData.baicao.delete(threadID);
-			return api.sendMessage(`Kết quả:\n\n ${ranking.join("\n")}\n\nRiêng người chơi đứng đầu nhận được ${values.rateBet * player.length} VNĐ`, threadID);
+			return api.sendMessage(`Kết quả:\n\n ${ranking.join("\n")}\n\nNgười chơi đứng đầu nhận được ${values.rateBet * player.length} VNĐ`, threadID);
 		}
 		else return
 	}
@@ -130,7 +130,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 	}
 
 	else if (args[0] == "info") {
-		if (typeof values.player == "undefined") return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
+		if (typeof values.player == "undefined") return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng /baicao create", threadID, messageID);
 		return api.sendMessage(
 			"=== Bàn Bài Cào ===" +
 			"\n- Author Bàn: " + values.author +
