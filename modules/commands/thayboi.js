@@ -2,7 +2,7 @@ module.exports.config = {
     name: "thayboi",
     version: "0.0.1",
     hasPermssion: 0,
-    credits: "CatalizCS",
+    credits: "Raiden",
     description: "Bói tình yêu, sự ngiệp, cuộc đời",
     commandCategory: "other",
     cooldowns: 5
