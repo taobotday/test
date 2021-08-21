@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "roleplay",
 	version: "1.0.2",
 	hasPermssion: 0,
-	credits: "Mirai Team",
+	credits: "Raiden",
 	description: "Hun, ôm, ... đủ thứ trò in here!",
 	commandCategory: "random-img",
 	cooldowns: 1,
