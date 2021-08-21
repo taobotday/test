@@ -7,7 +7,7 @@ module.exports.config = {
     name: "sim",
     version: "4.3.0",
     hasPermssion: 0,
-    credits: "ProCoderMew",
+    credits: "Raiden",
     description: "Chat c\xF9ng con sim m\u1EA5t d\u1EA1y nh\u1EA5t",
     commandCategory: "General",
     usages: "[args]",
