@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "uptime",
 	version: "1.0.1",
 	hasPermssion: 2,
-	credits: "TBĐ",
+	credits: "Raiden",
 	description: "Thời gian bot đã hoạt động.",
 	commandCategory: "system",
 	cooldowns: 5,
