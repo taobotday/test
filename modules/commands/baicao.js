@@ -79,7 +79,7 @@ module.exports.handleEvent = async ({ event, api, Users, Currencies }) => {
 			} catch (e) {};
 
 			global.moduleData.baicao.delete(threadID);
-			return api.sendMessage(`Kết quả:\n\n ${ranking.join("\n")}\n\nRiêng người chơi đứng đầu nhận được ${values.rateBet * player.length}$`, threadID);
+			return api.sendMessage(`Kết quả:\n\n ${ranking.join("\n")}\n\nRiêng người chơi đứng đầu nhận được ${values.rateBet * player.length} VNĐ`, threadID);
 		}
 		else return
 	}
@@ -104,7 +104,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 
 	if (args[0] == "create") {
 		if (global.moduleData.baicao.has(threadID)) return api.sendMessage("Hiện tại nhóm này đang có bàn bài cào đang được mở", threadID, messageID);
-		if (!args[1] || isNaN(args[1]) || parseInt(args[1]) <= 1) return api.sendMessage("Mức đặt cược của bạn không phải là một con số hoặc mức đặt cược của bạn bé hơn 1 VNĐ", threadID, messageID);
+		if (!args[1] || isNaN(args[1]) || parseInt(args[1]) <= 100) return api.sendMessage("Mức đặt cược của bạn không phải là một con số hoặc mức đặt cược của bạn bé hơn 100 VNĐ", threadID, messageID);
 		
 		try {
 			await Currencies.decreaseMoney(senderID, parseInt(args[1]));
