@@ -4,7 +4,7 @@ module.exports.config = {
 	credits: "Raiden",
 	description: "Ngân hàng chuyển đổi.",
 	usages: "",
-    commandCategory: "game-sp",
+    commandCategory: "economy",
 	cooldowns: 1,
 	dependencies: {
         "fs-extra" : ""
