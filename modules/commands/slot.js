@@ -2,24 +2,24 @@ module.exports.config = {
     name: "slot",
     version: "1.0.1",
     hasPermssion: 0,
-    credits: "Mirai Team",
-    description: "Đánh bạc bằng hình thức hoa quả",
+    credits: "Raiden",
+    description: "Đánh bạc bằng hình thức hoa quả.",
     commandCategory: "game-sp",
-    usages: "[số coin cần đặt]",
+    usages: "[số VNĐ cần đặt]",
     cooldowns: 5,
 };
 
 module.exports.languages = {
     "vi": {
-        "missingInput": "[ SLOT ] Số tiền đặt cược không được để trống hoặc là số âm",
-        "moneyBetNotEnough": "[ SLOT ] Số tiền bạn đặt lớn hơn hoặc bằng số dư của bạn!",
-        "limitBet": "[ SLOT ] Số coin đặt không được dưới 50$!",
-        "returnWin": "🎰 %1 | %2 | %3 🎰\nBạn đã thắng với %4$",
-        "returnLose": "🎰 %1 | %2 | %3 🎰\nBạn đã thua và mất %4$"
+        "missingInput": "[ SLOT ] Số VNĐ đặt cược không được để trống hoặc là số âm",
+        "moneyBetNotEnough": "[ SLOT ] Số VNĐ bạn đặt lớn hơn hoặc bằng số dư của bạn!",
+        "limitBet": "[ SLOT ] Số VNĐ đặt không được dưới 50$!",
+        "returnWin": "🎰 %1 | %2 | %3 🎰\nBạn đã THẮNG với %4$ VNĐ",
+        "returnLose": "🎰 %1 | %2 | %3 🎰\nBạn đã THUA và mất %4$ VNĐ"
     },
     "en": {
-        "missingInput": "[ SLOT ] The bet money must not be blank or a negative number",
-        "moneyBetNotEnough": "[ SLOT ] The money you betted is bigger than your balance!",
+        "missingInput": "[ SLOT ] The bet VNĐ must not be blank or a negative number",
+        "moneyBetNotEnough": "[ SLOT ] The VNĐ you betted is bigger than your balance!",
         "limitBet": "[ SLOT ] Your bet is too low, the minimum is 50$",
         "returnWin": "🎰 %1 | %2 | %3 🎰\nYou won with %4$",
         "returnLose": "🎰 %1 | %2 | %3 🎰\nYou lost and loss %4$"
