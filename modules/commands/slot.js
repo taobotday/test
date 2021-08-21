@@ -13,16 +13,16 @@ module.exports.languages = {
     "vi": {
         "missingInput": "[ SLOT ] Số VNĐ đặt cược không được để trống hoặc là số âm",
         "moneyBetNotEnough": "[ SLOT ] Số VNĐ bạn đặt lớn hơn hoặc bằng số dư của bạn!",
-        "limitBet": "[ SLOT ] Số VNĐ đặt không được dưới 50$!",
-        "returnWin": "🎰 %1 | %2 | %3 🎰\nBạn đã THẮNG với %4$ VNĐ",
-        "returnLose": "🎰 %1 | %2 | %3 🎰\nBạn đã THUA và mất %4$ VNĐ"
+        "limitBet": "[ SLOT ] Số VNĐ đặt không được dưới 100 VNĐ!",
+        "returnWin": "🎰 %1 | %2 | %3 🎰\nBạn đã THẮNG với %4 VNĐ",
+        "returnLose": "🎰 %1 | %2 | %3 🎰\nBạn đã THUA và mất %4 VNĐ"
     },
     "en": {
         "missingInput": "[ SLOT ] The bet VNĐ must not be blank or a negative number",
         "moneyBetNotEnough": "[ SLOT ] The VNĐ you betted is bigger than your balance!",
         "limitBet": "[ SLOT ] Your bet is too low, the minimum is 50$",
-        "returnWin": "🎰 %1 | %2 | %3 🎰\nYou won with %4$",
-        "returnLose": "🎰 %1 | %2 | %3 🎰\nYou lost and loss %4$"
+        "returnWin": "🎰 %1 | %2 | %3 🎰\nYou won with %4 VNĐ",
+        "returnLose": "🎰 %1 | %2 | %3 🎰\nYou lost and loss %4 VNĐ"
     }
 }
 
@@ -35,7 +35,7 @@ module.exports.run = async function({ api, event, args, Currencies, getText }) {
     var moneyBet = parseInt(args[0]);
     if (isNaN(moneyBet) || moneyBet <= 0) return api.sendMessage(getText("missingInput"), threadID, messageID);
 	if (moneyBet > moneyUser) return api.sendMessage(getText("moneyBetNotEnough"), threadID, messageID);
-	if (moneyBet < 50) return api.sendMessage(getText("limitBet"), threadID, messageID);
+	if (moneyBet < 100) return api.sendMessage(getText("limitBet"), threadID, messageID);
     var number = [], win = false;
     for (i = 0; i < 3; i++) number[i] = Math.floor(Math.random() * slotItems.length);
     if (number[0] == number[1] && number[1] == number[2]) {
