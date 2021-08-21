@@ -4,10 +4,10 @@ module.exports.config = {
   name: "kiss",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "Hungcatmoi",
-  description: "Hôn người bạn tag",
+  credits: "Raiden",
+  description: "Hôn người bạn khác.",
   commandCategory: "general",
-  usages: "kiss [tag người bạn cần Hôn]",
+  usages: "[tag]",
   cooldowns: 5,
 };
 
