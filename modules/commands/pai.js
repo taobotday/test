@@ -1,12 +1,12 @@
 const fs = require("fs");
 module.exports.config = {
-name: "pai",
+name: "bye",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "VanHung",
+	credits: "Raiden",
 	description: "Ngủ",
-	commandCategory: "Không cần dấu lệnh",
-	usages: "noprefix",
+	commandCategory: "Không cần dấu lệnh.",
+	usages: "",
 	cooldowns: 5,
 };
 module.exports.handleEvent = function({ api, event }) {
