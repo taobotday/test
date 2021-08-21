@@ -112,7 +112,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 
 		global.moduleData.baicao.set(event.threadID, { "author": senderID, "start": 0, "chiabai": 0, "ready": 0, rateBet: parseInt(args[1]), player: [ { "id": senderID, "card1": 0, "card2": 0, "card3": 0, "doibai": 2, "ready": false } ] });
 		
-		return api.sendMessage("Bàn bài cào của bạn đã được tạo thành công!, để tham gia bạn hãy nhập baicao join", threadID, messageID);
+		return api.sendMessage("Bàn bài cào của bạn đã được tạo thành công!, để tham gia bạn hãy nhập /baicao join", threadID, messageID);
 	}
 
 	else if (args[0] == "join") {
