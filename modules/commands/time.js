@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "time",
 	version: "1.0.0", 
 	hasPermssion: 0,
-	credits: "HungCatMoi",
+	credits: "Raiden",
 	description: "Xem bây giờ là mấy giờ",
 	commandCategory: "Other", 
 	usages: "time", 
