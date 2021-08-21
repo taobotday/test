@@ -2,8 +2,8 @@ module.exports.config = {
 	name: "wibu",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "VanHung",
-	description: "Xem ảnh Wibu",
+	credits: "Raiden",
+	description: "Xem ảnh Wibu.",
 	commandCategory: "Hình Ảnh",
 	usages: "wibu",
 	cooldowns: 5
@@ -17,7 +17,7 @@ module.exports.run = async ({ api, event }) => {
 	let ext = res.data.data.substring(res.data.data.lastIndexOf(".") + 1);
 	let callback = function () {
 					api.sendMessage({
-						body: `Ảnh wibu giành cho You 😋`,
+						body: `Ảnh wibu giành cho bạn 😋`,
 						attachment: fs.createReadStream(__dirname + `/cache/wibu.${ext}`)
 					}, event.threadID, () => fs.unlinkSync(__dirname + `/cache/wibu.${ext}`), event.messageID);
 				};
