@@ -23,10 +23,10 @@ module.exports.run = async({api,event,args,Currencies}) => {
 				all.sort((a, b) => b.exp - a.exp);
 				let num = 0;
 	             let msg = {
-					body: 'Top 10 người dùng có level cao nhất!',
+					body: 'Top 5 người dùng có level cao nhất!',
 					
 				}
-				for (var i = 0; i < 10; i++) {
+				for (var i = 0; i < 5; i++) {
 					    let data = await api.getUserInfo(all[i].userID);
    
 					let level = expToLevel(all[i].exp);
@@ -42,10 +42,10 @@ module.exports.run = async({api,event,args,Currencies}) => {
 				all.sort((a, b) => b.money - a.money);
 				let num = 0;
 	             let msg = {
-					body: 'Top 10 người dùng giàu nhất!',
+					body: 'Top 5 người dùng có số tiền cao nhất!',
 					
 				}
-				for (var i = 0; i < 10; i++) {
+				for (var i = 0; i < 5; i++) {
 					    let data = await api.getUserInfo(all[i].userID);
    
 					let level = all[i].money;
