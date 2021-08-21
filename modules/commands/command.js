@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "command",
 	version: "1.0.0",
 	hasPermssion: 2,
-	credits: "Mirai Team",
+	credits: "Raiden",
 	description: "Quản lý/Kiểm soát toàn bộ module của bot",
 	commandCategory: "config",
 	usages: "[load/unload/loadAll/unloadAll/info] [tên module]",
