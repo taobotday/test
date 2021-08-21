@@ -2,10 +2,10 @@ module.exports.config = {
 	name: "rank",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "CataliCS",
-	description: "Lấy rank hiện tại của bạn trên hệ thống bot kèm khung theo level của bạn, remake rank_card from canvacord",
+	credits: "Raiden",
+	description: "Rank hiện tại của bạn.",
 	commandCategory: "system",
-	cooldowns: 20,
+	cooldowns: 5,
 	dependencies: {
 		"fs-extra": "",
 		"path": "",
