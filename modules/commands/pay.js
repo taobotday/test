@@ -2,14 +2,14 @@ module.exports.config = {
 	name: "pay",
 	version: "0.0.1",
 	hasPermssion: 0,
-	credits: "loi",
-	description: "chuyển tiền!",
+	credits: "Raiden",
+	description: "Chuyển tiền.",
 	commandCategory: "Economy",
-	usages: "pay [tag]",
+	usages: "[tag]",
     cooldowns: 5,
     dependencies: ["parse-ms"],
     envConfig: {
-        cooldownTime: 1200000
+        cooldownTime: 5
     }
 };
 
@@ -26,16 +26,16 @@ module.exports.run = async function ({ event, api, Currencies, __GLOBAL }) {
 					var mention = Object.keys(event.mentions)[0];
 				if (moneyPay > moneydb) {
                  var sd = moneyPay - moneydb;
-					return api.sendMessage(`Bạn không đủ điều kiện, bạn vẫn thiếu ${sd} đô.`, event.threadID, event.messageID);
+					return api.sendMessage(`Bạn không đủ điều kiện, bạn vẫn thiếu ${sd} VNĐ.`, event.threadID, event.messageID);
 				}
-				if(moneyPay < 50) {
-					return api.sendMessage('Số tiền chuyển của bạn quá thấp, tối thiểu là 50 đô.', event.threadID, event.messageID);
+				if(moneyPay < 100) {
+					return api.sendMessage('Số VNĐ chuyển của bạn quá thấp, tối thiểu là 100 VNĐ.', event.threadID, event.messageID);
 				}
 				if (moneyPay < moneydb) {
                 var b = a/100*10;
                 var c = a-b
 				return api.sendMessage({
-					body:`Bạn đã chuyển ${c} đô cho ${event.mentions[mention].replace("@", "")}\nPhí giao dịch là 10% `,
+					body:`Bạn đã chuyển ${c} VNĐ cho ${event.mentions[mention].replace("@", "")}\nPhí giao dịch là 10% `,
 					mentions: [{
 						tag: event.mentions[mention].replace("@", ""),
 						id: mention
