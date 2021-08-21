@@ -9,7 +9,7 @@ module.exports.config = {
     cooldowns: 5,
 };
 module.exports.run = async function ({ args, api, event, Currencies, client, Users}) {
-    if (args[0] == "money") {
+    if (args[0] == "vnd") {
         var data = await client.allUser || []
         var top = [];
         for (var id of data) {
