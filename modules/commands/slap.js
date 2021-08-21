@@ -7,10 +7,10 @@ module.exports.config = {
     name: "slap",
     version: "2.2.2",
     hasPermssion: 0,
-    credits: "ProCoderMew",
+    credits: "Raiden",
     description: "",
     commandCategory: "general",
-    usages: "[@tag]",
+    usages: "[tag]",
     cooldowns: 5,
     dependencies: {
         "axios": "",
