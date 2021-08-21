@@ -5,7 +5,7 @@ module.exports.config = {
 	credits: "Raiden",
 	description: "Game bài cào dành cho nhóm có đặt cược.",
 	commandCategory: "game",
-	usages: "[create/start/join/info/leave]",
+	usages: "[create/start/join/leave/info/hd]",
 	cooldowns: 1
 };
 
@@ -108,7 +108,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 		
 		try {
 			await Currencies.decreaseMoney(senderID, parseInt(args[1]));
-		} catch (e) {  return api.sendMessage(`Bạn không đủ tiền để có thể khởi tạo bàn với giá: ${args[1]}$`, threadID, messageID) }
+		} catch (e) {  return api.sendMessage(`Bạn không đủ tiền để có thể khởi tạo bàn với giá: ${args[1]} VNĐ`, threadID, messageID) }
 
 		global.moduleData.baicao.set(event.threadID, { "author": senderID, "start": 0, "chiabai": 0, "ready": 0, rateBet: parseInt(args[1]), player: [ { "id": senderID, "card1": 0, "card2": 0, "card3": 0, "doibai": 2, "ready": false } ] });
 		
@@ -116,7 +116,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 	}
 
 	else if (args[0] == "join") {
-		if (!values) return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
+		if (!values) return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng /baicao create", threadID, messageID);
 		if (values.start == 1) return api.sendMessage("Hiện tại bàn bài cào đã được bắt đầu", threadID, messageID);
 		
 		try {
@@ -135,7 +135,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 			"=== Bàn Bài Cào ===" +
 			"\n- Author Bàn: " + values.author +
 			"\n- Tổng số người chơi: " + values.player.length + " Người" +
-			"\n- Mức cược: " + values.rateBet + "$"
+			"\n- Mức cược: " + values.rateBet + "VNĐ"
 		, threadID, messageID);
 	}
 
@@ -168,14 +168,14 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 	}
 
 	else if (args[0] == "start" && values.author == senderID) {
-		if (!values) return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
-		if (values.player.length <= 1) return api.sendMessage("Hiện tại bàn của bạn không có người chơi nào tham gia, bạn có thể mời người đấy tham gia bằng cách yêu cầu người chơi khác nhập baicao join", threadID, messageID);
+		if (!values) return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng /baicao create", threadID, messageID);
+		if (values.player.length <= 1) return api.sendMessage("Hiện tại bàn của bạn không có người chơi nào tham gia, bạn có thể mời người đấy tham gia bằng cách yêu cầu người chơi khác nhập /baicao join", threadID, messageID);
 		if (values.start == 1) return api.sendMessage("Hiện tại bàn đã được bắt đầu bởi chủ bàn", threadID, messageID);
 		values.start = 1;
 		return api.sendMessage("Bàn bài cào của bạn được bắt đầu", threadID, messageID);
 	}
 
-	else if (args[0] == "hdsd") return api.sendMessage("Hướng dẫn sử dụng bài cào\n\n/baicao create 100(100 là số tiền đặt) : để tạo bàn chơi\n/baicao start : để bắt đầu ván đấu\n/baicao join : để tham gia ván đấu\nchia bài : dành cho người tạo bàn đấu \nready : dể hạ bài\nđổi bài : để đổi bài nếu bài xấu(Chỉ có 3 lượt)\n/baicao info : để xem thông tin bàn đấu \n/baicao leave : để rời khỏi bàn chơi \n/balance : để xem số dư tài khoản", threadID, messageID);
+	else if (args[0] == "hd") return api.sendMessage("Hướng dẫn sử dụng bài cào\n\n/baicao create 100(100 là số tiền đặt) : để tạo bàn chơi\n/baicao start : để bắt đầu ván đấu\n/baicao join : để tham gia ván đấu\nchia bài : dành cho người tạo bàn đấu \nready : dể hạ bài\nđổi bài : để đổi bài nếu bài xấu(chỉ có 3 lượt)\n/baicao info : để xem thông tin bàn đấu \n/baicao leave : để rời khỏi bàn chơi \n/balance : để xem số dư tài khoản.", threadID, messageID);
 
 	else return global.utils.throwError(this.config.name, threadID, messageID);
 }
