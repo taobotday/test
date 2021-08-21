@@ -2,10 +2,10 @@ module.exports.config = {
     name: "top",
     version: "0.0.1",
     hasPermssion: 0,
-    credits: "CatalizCS",
-    description: "dik",
+    credits: "Raiden",
+    description: "Bảng Xếp Hạng.",
     commandCategory: "system",
-    usages: "checktt args",
+    usages: "[rank/vnd]",
     cooldowns: 5,
 };
 module.exports.run = async function ({ args, api, event, Currencies, client, Users}) {
@@ -24,9 +24,9 @@ top.sort((a, b) => {
      for(let num = 0; num < 10; num++) {
          const  datame = await Users.getData(top[num].id);
          const namee = datame.name
-         msg += `${num+1} . ${namee} với ${top[num].money} đô \n`;
+         msg += `${num+1} . ${namee} với ${top[num].money} VNĐ \n`;
      } 
-        api.sendMessage("💸Top 5 người giàu nhất server của bot 💸\n" + msg, event.threadID);          
+        api.sendMessage("Top 10 người giàu nhất\n" + msg, event.threadID);          
     }
 if (args[0] == "rank") {
         var data = await client.allUser || []
@@ -48,6 +48,6 @@ var top = top1.sort((a, b) => {
      const nameee = datamee.name;       
          msg += `${num+1} . ${nameee} với LV: ${top1[num].level}  \n`;
      } 
-        api.sendMessage("💸Top 5 người có số rank cao nhất server của bot 💸\n" + msg, event.threadID);          
+        api.sendMessage("Top 10 người có số rank cao nhất\n" + msg, event.threadID);          
     }
 }
