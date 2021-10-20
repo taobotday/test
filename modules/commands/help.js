@@ -2,9 +2,8 @@ module.exports.config = {
 	name: 'help',
 	version: '1.0.1',
 	hasPermssion: 0,
-	credits: 'Raiden',
 	description: 'Hướng dẫn cho người mới',
-	commandCategory: 'system',
+	commandCategory: '1',
 	usages: '[tên module]',
 	cooldowns: 5
 };
@@ -38,7 +37,7 @@ module.exports.handleEvent = function({ api, event }) {
 			command.config.description
 		}\n➤ Cách sử dụng: ${prefix}${command.config.name} ${
 			command.config.usages ? command.config.usages : ''
-		}\n➤ Thuộc nhóm: ${command.config.commandCategory}\n➤ Thời gian chờ: ${
+		}\n➤ Thời gian chờ: ${
 			command.config.cooldowns
 		} giây(s)\n➤ Quyền hạn: ${
 			command.config.hasPermssion == 0
@@ -46,7 +45,7 @@ module.exports.handleEvent = function({ api, event }) {
 				: command.config.hasPermssion == 1
 					? 'Quản trị viên'
 					: 'Người vận hành'
-		}\n\n✦ Modules code by ${command.config.credits}`,
+		}`,
 		threadID,
 		messageID
 	);
@@ -85,7 +84,7 @@ module.exports.run = function({ api, event, args }) {
 		}
 		group.forEach(
 			commandGroup =>
-				(msg += `➤ Thuộc nhóm: ${commandGroup.group.charAt(0).toUpperCase() +
+				(msg += `✦ CÁC LỆNH BOT DƯỚI ĐÂY: ${commandGroup.group.charAt(0).toUpperCase() +
 					commandGroup.group.slice(1)} \n\n${commandGroup.cmds.join(
 					', '
 				)}\n\n\n`)
@@ -112,7 +111,7 @@ module.exports.run = function({ api, event, args }) {
 			command.config.description
 		}\n➤ Cách sử dụng: ${prefix}${command.config.name} ${
 			command.config.usages ? command.config.usages : ''
-		}\n➤ Thuộc nhóm: ${command.config.commandCategory}\n➤ Thời gian chờ: ${
+		}\n➤ Thời gian chờ: ${
 			command.config.cooldowns
 		} giây(s)\n➤ Quyền hạn: ${
 			command.config.hasPermssion == 0
@@ -120,7 +119,7 @@ module.exports.run = function({ api, event, args }) {
 				: command.config.hasPermssion == 1
 					? 'Quản trị viên'
 					: 'Người vận hành'
-		}\n\n✦ Modules code by ${command.config.credits}`,
+		}`,
 		threadID,
 		messageID
 	);
