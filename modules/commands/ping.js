@@ -1,10 +1,9 @@
 module.exports.config = {
 	name: "ping",
 	version: "1.0.5",
-	hasPermssion: 2,
-	credits: "Raiden",
-	description: "tag toàn bộ thành viên.",
-	commandCategory: "system",
+	hasPermssion: 1,
+	description: "Tag toàn bộ thành viên",
+	commandCategory: "1",
 	usages: "[text]",
 	cooldowns: 0
 };
