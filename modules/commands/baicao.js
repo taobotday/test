@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "baicao",
 	version: "1.0.4",
 	hasPermssion: 0,
-	description: "Game bài cào dành cho nhóm có đặt cược",
+	description: "Game bài cào",
 	commandCategory: "1",
 	usages: "[start/join/info/leave]",
 	cooldowns: 1
