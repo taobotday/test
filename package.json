@@ -1,7 +1,6 @@
 {
 	"name": "miraiBot",
 	"version": "1.2.14",
-	"description": "A simple Facebook Messenger Bot made by me(CatalizCS) and my brother SpermLord.",
 	"main": "mirai.js",
 	"scripts": {
 		"start": "node index",
@@ -22,7 +21,6 @@
 		"spermlord",
 		"miraipr0ject"
 	],
-	"author": "CatalizCS & SpermLord",
 	"license": "GPL-3.0",
 	"bugs": {
 		"url": "https://github.com/miraipr0ject/miraiv2/issues"
