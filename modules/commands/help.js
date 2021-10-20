@@ -39,13 +39,7 @@ module.exports.handleEvent = function({ api, event }) {
 			command.config.usages ? command.config.usages : ''
 		}\n➤ Thời gian chờ: ${
 			command.config.cooldowns
-		} giây(s)\n➤ Quyền hạn: ${
-			command.config.hasPermssion == 0
-				? 'Người dùng'
-				: command.config.hasPermssion == 1
-					? 'Quản trị viên'
-					: 'Người vận hành'
-		}`,
+		} giây(s)`,
 		threadID,
 		messageID
 	);
@@ -84,18 +78,13 @@ module.exports.run = function({ api, event, args }) {
 		}
 		group.forEach(
 			commandGroup =>
-				(msg += `✦ CÁC LỆNH BOT DƯỚI ĐÂY: ${commandGroup.group.charAt(0).toUpperCase() +
-					commandGroup.group.slice(1)} \n\n${commandGroup.cmds.join(
+				(msg += `✦ Các lệnh bot dưới đây: ${commandGroup.group.slice(1)} \n\n${commandGroup.cmds.join(
 					', '
-				)}\n\n\n`)
+				)}\n\n`)
 		);
-		return api.sendMessage(
+    return api.sendMessage(
 			msg +
-				`✦ Sử dụng: "${
-					threadSetting.hasOwnProperty('PREFIX')
-						? threadSetting.PREFIX
-						: global.config.PREFIX
-				}help từng lệnh ở trên" để xem chi tiết cách sử dụng! | Hiện tại đang có ${
+				`✦ Hiện tại đang có ${
 					commands.size
 				} lệnh có thể sử dụng trên bot này.`,
 			threadID
@@ -113,13 +102,7 @@ module.exports.run = function({ api, event, args }) {
 			command.config.usages ? command.config.usages : ''
 		}\n➤ Thời gian chờ: ${
 			command.config.cooldowns
-		} giây(s)\n➤ Quyền hạn: ${
-			command.config.hasPermssion == 0
-				? 'Người dùng'
-				: command.config.hasPermssion == 1
-					? 'Quản trị viên'
-					: 'Người vận hành'
-		}`,
+		} giây(s)`,
 		threadID,
 		messageID
 	);
