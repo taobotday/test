@@ -4,10 +4,8 @@ module.exports.config = {
 	name: 'boxinfo',
 	version: '1.0.0',
 	hasPermssion: 0,
-	credits: 'Raiden',
 	description: 'Xem thông tin box của bạn.',
-	commandCategory: 'Info',
-	usages: 'boxinfo',
+	commandCategory: '1',
 	cooldowns: 5,
 	dependencies: []
 };
